@@ -50,15 +50,15 @@ public class CapacitorVideoPlayer: CAPPlugin {
         self.mode = mode
         // add audio session
         self.audioSession = AVAudioSession.sharedInstance()
-        do {
-            // Set the audio session category, mode, and options.
-            try self.audioSession.setCategory(.playback, mode: .moviePlayback, options: [])
-        } catch {
-            let error:String = "Failed to set audio session category."
-            print(error)
-            call.success([ "result": false, "method":"initPlayer", "message": error])
-            return
-        }
+        //do {
+        //    // Set the audio session category, mode, and options.
+        //    try self.audioSession.setCategory(.playback, mode: .moviePlayback, options: [])
+        //} catch {
+        //    let error:String = "Failed to set audio session category."
+        //    print(error)
+        //    call.success([ "result": false, "method":"initPlayer", "message": error])
+        //    return
+        //}
 
         if (mode == "fullscreen") {
             guard let url = call.options["url"] as? String else {
