@@ -128,9 +128,15 @@ public class CapacitorVideoPlayer: CAPPlugin {
              if (self.videoPlayerFullScreenView != nil) {
                  if let playerView = self.videoPlayerFullScreenView {
                      DispatchQueue.main.async {
-                        let isPlaying: Bool = playerView.isPlaying;
-                        call.success([ "result": true, "method":"isPlaying", "value": isPlaying])
-                        return
+                        if let isPlaying: Bool = playerView.isPlaying {
+                            call.success([ "result": true, "method":"isPlaying", "value": isPlaying])
+                            return
+                        } else {
+                            print("Caught nil error")
+                            call.succes(["result": false, "method":"isPlaying","value": false])
+                            return
+                        }
+                        
                      }
                  } else {
                     let error:String = "Fullscreen player not found"
