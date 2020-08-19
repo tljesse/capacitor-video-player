@@ -133,7 +133,7 @@ public class CapacitorVideoPlayer: CAPPlugin {
                             return
                         } else {
                             print("Caught nil error")
-                            call.succes(["result": false, "method":"isPlaying","value": false])
+                            call.success(["result": false, "method":"isPlaying","value": false])
                             return
                         }
                         
